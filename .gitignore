@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editor/system clutter
+*.swp
+.idea/
+.vscode/
+
+# Claude Code session state
+.claude/

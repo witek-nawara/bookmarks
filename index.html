@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Witek's Bookmarks</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    p.subtitle { color: var(--muted); margin-top: 0; }
+    section { margin-top: 2rem; }
+    h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    ul { list-style: none; padding: 0; }
+    li {
+      background: var(--card);
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      transition: transform 0.1s ease;
+    }
+    li:hover { transform: translateX(4px); }
+    a { color: var(--text); text-decoration: none; font-weight: 500; }
+    a:hover { color: var(--accent); }
+    .note { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Witek's Bookmarks</h1>
+  <p class="subtitle">A small homepage for the links I open every day.</p>
+
+  <section>
+    <h2>Work</h2>
+    <ul>
+      <li><a href="https://vinted.atlassian.net">Confluence</a><span class="note">— team docs</span></li>
+      <li><a href="https://vinted.atlassian.net/jira">Jira</a><span class="note">— tickets</span></li>
+      <li><a href="https://github.com/witek-nawara">GitHub</a><span class="note">— my repos</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Learning</h2>
+    <ul>
+      <li><a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code docs</a></li>
+      <li><a href="https://git-scm.com/docs">Git reference</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Personal</h2>
+    <ul>
+      <li><a href="https://news.ycombinator.com">Hacker News</a></li>
+    </ul>
+  </section>
+</body>
+</html>
