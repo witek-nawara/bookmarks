@@ -3,76 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Witek's Bookmarks</title>
+  <title>Witek's Birding Hub</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
+      --bg: #1a2419;
+      --card: #2d3a2a;
+      --card-hover: #3a4a36;
+      --text: #f0ead6;
+      --muted: #a8b39a;
+      --accent: #d4a574;
+      --accent-bright: #f4c47a;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(ellipse at top, #2a3829 0%, var(--bg) 60%);
       color: var(--text);
       padding: 2rem;
-      max-width: 900px;
+      max-width: 980px;
       margin-inline: auto;
+      min-height: 100vh;
     }
-    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-    p.subtitle { color: var(--muted); margin-top: 0; }
+    header { margin-bottom: 2.5rem; }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+    h1 .icon {
+      display: inline-block;
+      transform: translateY(-2px);
+      margin-right: 0.4rem;
+    }
+    p.subtitle {
+      color: var(--muted);
+      margin-top: 0;
+      font-size: 1.05rem;
+      max-width: 60ch;
+    }
     section { margin-top: 2rem; }
     h2 {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(212, 165, 116, 0.2);
     }
-    ul { list-style: none; padding: 0; }
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.6rem;
+    }
     li {
       background: var(--card);
-      padding: 0.75rem 1rem;
-      margin-bottom: 0.5rem;
-      border-radius: 8px;
-      transition: transform 0.1s ease;
+      padding: 0.9rem 1.1rem;
+      border-radius: 10px;
+      transition: background 0.15s ease, transform 0.1s ease;
+      border: 1px solid transparent;
     }
-    li:hover { transform: translateX(4px); }
-    a { color: var(--text); text-decoration: none; font-weight: 500; }
-    a:hover { color: var(--accent); }
-    .note { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+    li:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+      border-color: rgba(212, 165, 116, 0.3);
+    }
+    a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+    }
+    a:hover { color: var(--accent-bright); }
+    .note {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+      margin-top: 0.25rem;
+    }
+    .flag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: rgba(212, 165, 116, 0.15);
+      color: var(--accent);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      vertical-align: 1px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(168, 179, 154, 0.15);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>Witek's Bookmarks</h1>
-  <p class="subtitle">A test homepage.</p>
+  <header>
+    <h1><span class="icon">🪶</span>Witek's Birding Hub</h1>
+    <p class="subtitle">The places I check for observations, identification help, and bird news — with a focus on the Netherlands.</p>
+  </header>
 
   <section>
-    <h2>Work</h2>
+    <h2>Observations &amp; Sightings</h2>
     <ul>
-      <li><a href="https://vinted.atlassian.net">Confluence</a><span class="note">— team docs</span></li>
-      <li><a href="https://vinted.atlassian.net/jira">Jira</a><span class="note">— tickets</span></li>
-      <li><a href="https://github.com/witek-nawara">GitHub</a><span class="note">— my repos</span></li>
+      <li>
+        <a href="https://waarneming.nl">Waarneming.nl <span class="flag">NL</span></a>
+        <span class="note">Dutch observation database — sightings, maps, species lists</span>
+      </li>
+      <li>
+        <a href="https://observation.org">Observation.org</a>
+        <span class="note">International sibling of waarneming.nl — global sightings</span>
+      </li>
+      <li>
+        <a href="https://ebird.org">eBird</a>
+        <span class="note">Cornell Lab's global checklist platform — hotspots, alerts, life list</span>
+      </li>
+      <li>
+        <a href="https://dutchbirding.nl">Dutch Birding <span class="flag">NL</span></a>
+        <span class="note">Rare bird news and reports from the Netherlands</span>
+      </li>
+      <li>
+        <a href="https://www.trektellen.nl">Trektellen.nl <span class="flag">NL</span></a>
+        <span class="note">Migration counts from watchpoints across Europe</span>
+      </li>
     </ul>
   </section>
 
   <section>
-    <h2>Learning</h2>
+    <h2>Identification</h2>
     <ul>
-      <li><a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code docs</a></li>
-      <li><a href="https://git-scm.com/docs">Git reference</a></li>
-      <li><a href="https://docs.astral.sh/uv/">uv docs</a><span class="note">— Python env manager</span></li>
+      <li>
+        <a href="https://merlin.allaboutbirds.org">Merlin Bird ID</a>
+        <span class="note">Photo, sound, and step-by-step ID by the Cornell Lab</span>
+      </li>
+      <li>
+        <a href="https://www.allaboutbirds.org">All About Birds</a>
+        <span class="note">Comprehensive field guide with sounds and behavior</span>
+      </li>
+      <li>
+        <a href="https://xeno-canto.org">Xeno-canto</a>
+        <span class="note">Massive open archive of bird sounds — search by species or location</span>
+      </li>
+      <li>
+        <a href="https://www.macaulaylibrary.org">Macaulay Library</a>
+        <span class="note">Cornell's audio and photo archive — millions of recordings</span>
+      </li>
     </ul>
   </section>
 
   <section>
-    <h2>Personal</h2>
+    <h2>Conservation &amp; Research</h2>
     <ul>
-      <li><a href="https://news.ycombinator.com">Hacker News</a></li>
+      <li>
+        <a href="https://sovon.nl">Sovon <span class="flag">NL</span></a>
+        <span class="note">Dutch centre for ornithology — counts, atlases, research</span>
+      </li>
+      <li>
+        <a href="https://www.vogelbescherming.nl">Vogelbescherming Nederland <span class="flag">NL</span></a>
+        <span class="note">BirdLife partner in the Netherlands — protection &amp; advocacy</span>
+      </li>
+      <li>
+        <a href="https://www.birdlife.org">BirdLife International</a>
+        <span class="note">Global partnership of bird conservation organisations</span>
+      </li>
+      <li>
+        <a href="https://www.rspb.org.uk">RSPB <span class="flag">UK</span></a>
+        <span class="note">Royal Society for the Protection of Birds — guides &amp; reserves</span>
+      </li>
     </ul>
   </section>
+
+  <section>
+    <h2>Reference</h2>
+    <ul>
+      <li>
+        <a href="https://www.worldbirdnames.org">IOC World Bird List</a>
+        <span class="note">Authoritative global taxonomy and naming</span>
+      </li>
+      <li>
+        <a href="https://avibase.bsc-eoc.org">Avibase</a>
+        <span class="note">Database of every bird species — checklists, synonyms, taxonomy</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    Made with bookmarks, hosted on GitHub Pages.
+  </footer>
 </body>
 </html>
